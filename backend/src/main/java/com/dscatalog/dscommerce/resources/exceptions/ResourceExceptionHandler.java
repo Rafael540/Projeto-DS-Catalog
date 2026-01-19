@@ -18,7 +18,6 @@ public class ResourceExceptionHandler {
         HttpStatus status =HttpStatus.NOT_FOUND;
         StandardError err = new StandardError();
         err.setTimestamp(Instant.now());
-        err.setStatus(HttpStatus.NOT_FOUND.value());
         err.setError("Resource not found");
         err.setMessage(e.getMessage());
         err.setPath(request.getRequestURI());
@@ -30,7 +29,6 @@ public class ResourceExceptionHandler {
         HttpStatus status =HttpStatus.BAD_REQUEST;
         StandardError err = new StandardError();
         err.setTimestamp(Instant.now());
-        err.setStatus(HttpStatus.BAD_REQUEST.value());
         err.setError("Database exception");
         err.setMessage(e.getMessage());
         err.setPath(request.getRequestURI());
