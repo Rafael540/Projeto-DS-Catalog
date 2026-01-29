@@ -68,9 +68,7 @@ public class ProductService {
 
     @Transactional(propagation = Propagation.SUPPORTS)
     public void delete(Long id) {
-        if (!repository.existsById(id)) {
-            throw new ResourceNotFoundException("Recurso não encontrado");
-        }
+       
         try {
             repository.deleteById(id);
         }
